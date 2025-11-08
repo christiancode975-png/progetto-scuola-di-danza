@@ -415,3 +415,211 @@ body::before {
 @media (min-width: 1920px) {
   html { font-size: 18px; }
 }
+
+/* ========================================
+   LEAFLET MAP CUSTOM STYLES
+   ======================================== */
+
+/* Import Leaflet core styles */
+@import 'leaflet/dist/leaflet.css';
+@import 'leaflet.markercluster/dist/MarkerCluster.css';
+@import 'leaflet.markercluster/dist/MarkerCluster.Default.css';
+
+/* Map Container */
+.leaflet-container {
+  border-radius: 1.5rem;
+  overflow: hidden;
+  box-shadow: 0 16px 48px 0 rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--glass-border);
+  background: rgba(10, 10, 10, 0.8);
+}
+
+/* Custom Marker Styling */
+.custom-marker-icon {
+  filter: drop-shadow(0 6px 16px rgba(14, 165, 233, 0.5));
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.custom-marker-icon:hover {
+  transform: scale(1.15);
+}
+
+/* Custom Popup Styling */
+.leaflet-popup-content-wrapper {
+  background: rgba(18, 18, 23, 0.98);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  border-radius: 1rem;
+  padding: 0;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.leaflet-popup-content {
+  margin: 0;
+  padding: 1rem;
+  color: #fff;
+  font-size: 0.95rem;
+}
+
+.leaflet-popup-tip {
+  background: rgba(18, 18, 23, 0.98);
+  border: 1px solid rgba(14, 165, 233, 0.3);
+  border-top: none;
+  border-right: none;
+}
+
+.popup-school-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 0.75rem;
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.popup-school-info {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.6;
+  margin-bottom: 0.5rem;
+}
+
+.popup-school-link {
+  color: var(--primary);
+  text-decoration: none;
+  font-weight: 600;
+  transition: color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  margin-top: 0.75rem;
+}
+
+.popup-school-link:hover {
+  color: var(--accent);
+}
+
+/* Cluster Marker Styling */
+.marker-cluster-small {
+  background: rgba(14, 165, 233, 0.95);
+}
+
+.marker-cluster-small div {
+  background: rgba(14, 165, 233, 0.8);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.marker-cluster-medium {
+  background: rgba(249, 115, 22, 0.95);
+}
+
+.marker-cluster-medium div {
+  background: rgba(249, 115, 22, 0.8);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.marker-cluster-large {
+  background: rgba(139, 92, 246, 0.95);
+}
+
+.marker-cluster-large div {
+  background: rgba(139, 92, 246, 0.8);
+  color: #fff;
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.marker-cluster {
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);
+}
+
+.marker-cluster:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 24px rgba(14, 165, 233, 0.4);
+}
+
+/* Fix Leaflet default icon paths */
+.leaflet-default-icon-path {
+  background-image: url('https://unpkg.com/leaflet@1.9.4/dist/images/marker-icon.png');
+}
+
+/* ========================================
+   GLOBAL LAYOUT UTILITIES
+   ======================================== */
+
+/* Unified Container */
+.page-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: clamp(1rem, 2vw, 2.5rem);
+}
+
+/* Unified Grid System */
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+}
+
+/* Unified Dark Card */
+.dark-card {
+  background: rgba(18, 18, 23, 0.85);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.dark-card:hover {
+  background: rgba(18, 18, 23, 0.95);
+  border-color: rgba(14, 165, 233, 0.5);
+  transform: translateY(-8px);
+  box-shadow: 0 16px 48px rgba(14, 165, 233, 0.25);
+}
+
+/* Typography utilities */
+.text-overflow-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

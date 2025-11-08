@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
+import { GlobalAnimations } from "@/components/layout/global-animations";
 
 export const metadata: Metadata = {
   title: "DanzaItalia - Trova e Prenota Corsi di Danza in Tutta Italia",
@@ -42,6 +43,7 @@ export default function RootLayout({
 
         {/* Main Content */}
         <div className="relative z-10">
+          <GlobalAnimations />
           <Navbar />
           <main className="min-h-screen pt-20">
             {children}
