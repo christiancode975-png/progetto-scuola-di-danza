@@ -1,0 +1,72 @@
+[
+  {
+    "id": "m1",
+    "nome": "Elena",
+    "cognome": "Rossi",
+    "email": "elena.rossi@danzaitalia.it",
+    "telefono": "+39 333 1234567",
+    "bio": "Ballerina professionista con 20 anni di esperienza nella danza classica. Diplomata presso la Scala di Milano, ha danzato nei teatri più prestigiosi d'Europa.",
+    "foto": "/images/maestri/elena-rossi.jpg",
+    "specialita": "Danza Classica, Punte, Repertorio",
+    "premi": "Premio Internazionale Danza Classica 2018, Ballerina dell'Anno 2020",
+    "scuolaId": "2",
+    "rating": 4.9,
+    "recensioni": 45
+  },
+  {
+    "id": "m2",
+    "nome": "Marco",
+    "cognome": "Bianchi",
+    "email": "marco.bianchi@danzaitalia.it",
+    "telefono": "+39 334 7654321",
+    "bio": "Coreografo e insegnante di danza contemporanea. Fondatore di diverse compagnie di danza moderna in Italia.",
+    "foto": "/images/maestri/marco-bianchi.jpg",
+    "specialita": "Contemporanea, Moderna, Improvvisazione",
+    "premi": "Coreografo dell'Anno 2019, Premio Innovazione Danza 2021",
+    "scuolaId": "3",
+    "rating": 4.8,
+    "recensioni": 38
+  },
+  {
+    "id": "m3",
+    "nome": "Sofia",
+    "cognome": "Ferrari",
+    "email": "sofia.ferrari@danzaitalia.it",
+    "telefono": "+39 335 9876543",
+    "bio": "Specialista in Hip-Hop e danze urbane. Ha lavorato con artisti internazionali e vinto numerosi campionati nazionali.",
+    "foto": "/images/maestri/sofia-ferrari.jpg",
+    "specialita": "Hip-Hop, Breakdance, Urban Dance",
+    "premi": "Campionessa Italiana Hip-Hop 2017-2020",
+    "scuolaId": "6",
+    "rating": 5.0,
+    "recensioni": 52
+  },
+  {
+    "id": "m4",
+    "nome": "Giulia",
+    "cognome": "Romano",
+    "email": "giulia.romano@danzaitalia.it",
+    "telefono": "+39 336 4567890",
+    "bio": "Maestra di danza classica e moderna. Specializzata nell'insegnamento ai bambini con metodo Vaganova.",
+    "foto": "/images/maestri/giulia-romano.jpg",
+    "specialita": "Classica, Moderna, Propedeutica",
+    "premi": "Miglior Insegnante per Bambini 2020",
+    "scuolaId": "4",
+    "rating": 4.9,
+    "recensioni": 67
+  },
+  {
+    "id": "m5",
+    "nome": "Alessandro",
+    "cognome": "Conti",
+    "email": "alessandro.conti@danzaitalia.it",
+    "telefono": "+39 337 3216549",
+    "bio": "Ballerino e coreografo specializzato in Jazz e Musical. Ha lavorato in produzioni teatrali internazionali.",
+    "foto": "/images/maestri/alessandro-conti.jpg",
+    "specialita": "Jazz, Musical Theatre, Tip Tap",
+    "premi": "Best Jazz Choreographer 2019",
+    "scuolaId": "7",
+    "rating": 4.7,
+    "recensioni": 41
+  }
+]

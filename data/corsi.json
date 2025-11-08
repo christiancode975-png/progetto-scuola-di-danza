@@ -1,0 +1,131 @@
+[
+  {
+    "id": "c1",
+    "nome": "Danza Classica - Livello Principiante",
+    "tipoDanza": "Classica",
+    "livello": "Principiante",
+    "descrizione": "Corso introduttivo alla danza classica. Imparerai le basi della tecnica classica, posizioni, port de bras e primi passi alla sbarra.",
+    "durata": 60,
+    "maxPartecipanti": 15,
+    "prezzo": 25.00,
+    "maestroId": "m1",
+    "scuolaId": "2",
+    "orari": [
+      { "giornoSettimana": 1, "oraInizio": "18:00", "oraFine": "19:00" },
+      { "giornoSettimana": 3, "oraInizio": "18:00", "oraFine": "19:00" },
+      { "giornoSettimana": 5, "oraInizio": "18:00", "oraFine": "19:00" }
+    ]
+  },
+  {
+    "id": "c2",
+    "nome": "Danza Classica - Livello Intermedio",
+    "tipoDanza": "Classica",
+    "livello": "Intermedio",
+    "descrizione": "Per chi ha già esperienza. Tecniche avanzate, lavoro sulle punte, variazioni di repertorio.",
+    "durata": 90,
+    "maxPartecipanti": 12,
+    "prezzo": 35.00,
+    "maestroId": "m1",
+    "scuolaId": "2",
+    "orari": [
+      { "giornoSettimana": 2, "oraInizio": "19:00", "oraFine": "20:30" },
+      { "giornoSettimana": 4, "oraInizio": "19:00", "oraFine": "20:30" }
+    ]
+  },
+  {
+    "id": "c3",
+    "nome": "Danza Contemporanea - Open Level",
+    "tipoDanza": "Contemporanea",
+    "livello": "Tutti i livelli",
+    "descrizione": "Esplora la libertà del movimento contemporaneo. Improvvisazione, floor work, tecniche release.",
+    "durata": 75,
+    "maxPartecipanti": 20,
+    "prezzo": 30.00,
+    "maestroId": "m2",
+    "scuolaId": "3",
+    "orari": [
+      { "giornoSettimana": 1, "oraInizio": "20:00", "oraFine": "21:15" },
+      { "giornoSettimana": 4, "oraInizio": "20:00", "oraFine": "21:15" }
+    ]
+  },
+  {
+    "id": "c4",
+    "nome": "Hip-Hop - Livello Principiante",
+    "tipoDanza": "Hip-Hop",
+    "livello": "Principiante",
+    "descrizione": "Introduzione all'Hip-Hop e alle danze urbane. Groove, isolations, e prime coreografie.",
+    "durata": 60,
+    "maxPartecipanti": 25,
+    "prezzo": 20.00,
+    "maestroId": "m3",
+    "scuolaId": "6",
+    "orari": [
+      { "giornoSettimana": 2, "oraInizio": "17:00", "oraFine": "18:00" },
+      { "giornoSettimana": 5, "oraInizio": "17:00", "oraFine": "18:00" }
+    ]
+  },
+  {
+    "id": "c5",
+    "nome": "Hip-Hop - Livello Avanzato",
+    "tipoDanza": "Hip-Hop",
+    "livello": "Avanzato",
+    "descrizione": "Per danzatori esperti. Coreografie complesse, freestyle, battle preparation.",
+    "durata": 90,
+    "maxPartecipanti": 15,
+    "prezzo": 35.00,
+    "maestroId": "m3",
+    "scuolaId": "6",
+    "orari": [
+      { "giornoSettimana": 3, "oraInizio": "19:00", "oraFine": "20:30" },
+      { "giornoSettimana": 6, "oraInizio": "15:00", "oraFine": "16:30" }
+    ]
+  },
+  {
+    "id": "c6",
+    "nome": "Danza Moderna - Bambini (6-10 anni)",
+    "tipoDanza": "Moderna",
+    "livello": "Principiante",
+    "descrizione": "Corso di danza moderna per bambini. Sviluppo della creatività, coordinazione e musicalità.",
+    "durata": 45,
+    "maxPartecipanti": 18,
+    "prezzo": 18.00,
+    "maestroId": "m4",
+    "scuolaId": "4",
+    "orari": [
+      { "giornoSettimana": 3, "oraInizio": "16:30", "oraFine": "17:15" },
+      { "giornoSettimana": 5, "oraInizio": "16:30", "oraFine": "17:15" }
+    ]
+  },
+  {
+    "id": "c7",
+    "nome": "Jazz Dance - Intermedio",
+    "tipoDanza": "Jazz",
+    "livello": "Intermedio",
+    "descrizione": "Jazz dance con influenze broadway e musical theatre. Tecnica, stile e performance.",
+    "durata": 75,
+    "maxPartecipanti": 16,
+    "prezzo": 28.00,
+    "maestroId": "m5",
+    "scuolaId": "7",
+    "orari": [
+      { "giornoSettimana": 2, "oraInizio": "18:30", "oraFine": "19:45" },
+      { "giornoSettimana": 4, "oraInizio": "18:30", "oraFine": "19:45" }
+    ]
+  },
+  {
+    "id": "c8",
+    "nome": "Breakdance - Principianti",
+    "tipoDanza": "Breakdance",
+    "livello": "Principiante",
+    "descrizione": "Introduzione al breaking. Toprock, footwork, freezes e primi power moves.",
+    "durata": 60,
+    "maxPartecipanti": 20,
+    "prezzo": 22.00,
+    "maestroId": "m3",
+    "scuolaId": "6",
+    "orari": [
+      { "giornoSettimana": 1, "oraInizio": "19:00", "oraFine": "20:00" },
+      { "giornoSettimana": 4, "oraInizio": "19:00", "oraFine": "20:00" }
+    ]
+  }
+]
