@@ -237,18 +237,21 @@ body::before {
 .glass-card {
   background: var(--glass-bg);
   border: 1px solid var(--glass-border);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 }
 
 .glass-hover {
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
 }
 
 .glass-hover:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: rgba(14, 165, 233, 0.4);
-  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(14, 165, 233, 0.5);
+  transform: translateY(-10px);
+  box-shadow: 0 16px 48px 0 rgba(14, 165, 233, 0.25);
 }
 
 /* ========================================
@@ -324,24 +327,91 @@ body::before {
 }
 
 /* ========================================
+   ENHANCED ANIMATIONS
+   ======================================== */
+
+/* Pulse animation for icons */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(14, 165, 233, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(14, 165, 233, 0.6);
+  }
+}
+
+.pulse-on-hover:hover {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Smooth fade-in */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Smooth scale on hover */
+.hover-scale {
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hover-scale:hover {
+  transform: scale(1.03);
+}
+
+/* ========================================
    RESPONSIVE
    ======================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 640px) {
   html { font-size: 14px; }
 
   .mesh-gradient {
-    filter: blur(60px);
+    filter: blur(50px);
   }
 
   .mesh-1, .mesh-2, .mesh-3 {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
+  }
+
+  /* Reduce hover lift on mobile */
+  .glass-hover:hover {
+    transform: translateY(-4px);
+  }
+}
+
+@media (min-width: 641px) and (max-width: 1024px) {
+  html { font-size: 15px; }
+
+  .mesh-gradient {
+    filter: blur(70px);
+  }
+
+  .mesh-1, .mesh-2, .mesh-3 {
+    width: 450px;
+    height: 450px;
   }
 }
 
 @media (min-width: 1440px) {
+  html { font-size: 16px; }
+
   .container {
     max-width: 1400px;
   }
+}
+
+@media (min-width: 1920px) {
+  html { font-size: 18px; }
 }
