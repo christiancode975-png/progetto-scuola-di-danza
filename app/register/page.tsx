@@ -31,28 +31,32 @@ export default function RegisterPage() {
     // Simulazione registrazione
     setTimeout(() => {
       localStorage.setItem("user", JSON.stringify({ email: formData.email, name: formData.name }))
-      alert("Registrazione completata! Benvenuto in DanzaItalia!")
       router.push("/dashboard")
       setIsLoading(false)
     }, 1000)
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-white flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
-      <Card className="max-w-md w-full border-2">
-        <CardHeader className="text-center">
-          <div className="w-16 h-16 bg-gradient-to-br from-pink-500 to-purple-500 rounded-full flex items-center justify-center mx-auto mb-4">
-            <span className="text-white font-bold text-2xl">D</span>
+    <div className="min-h-screen flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8">
+      <div className="max-w-md w-full reveal">
+        <div className="glass-card rounded-3xl p-8 border border-white/10">
+          {/* Logo */}
+          <div className="text-center mb-8">
+            <div className="w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center mx-auto mb-4 transform hover:scale-110 transition-transform">
+              <span className="text-white font-bold text-2xl">D</span>
+            </div>
+            <h1 className="text-3xl font-bold text-white mb-2">
+              Unisciti a <span className="gradient-text">DanzaItalia</span>
+            </h1>
+            <p className="text-white/60">
+              Crea il tuo account e inizia a ballare
+            </p>
           </div>
-          <CardTitle className="text-3xl font-bold">Registrati su DanzaItalia</CardTitle>
-          <CardDescription>
-            Crea un account per prenotare corsi e gestire le tue lezioni
-          </CardDescription>
-        </CardHeader>
-        <CardContent>
-          <form onSubmit={handleSubmit} className="space-y-6">
+
+          {/* Form */}
+          <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <Label htmlFor="name">Nome Completo</Label>
+              <Label htmlFor="name" className="text-white/80">Nome Completo</Label>
               <Input
                 id="name"
                 type="text"
@@ -60,12 +64,12 @@ export default function RegisterPage() {
                 value={formData.name}
                 onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                 required
-                className="mt-2"
+                className="mt-2 glass-card border-white/20 text-white placeholder:text-white/40 focus:border-primary"
               />
             </div>
 
             <div>
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email" className="text-white/80">Email</Label>
               <Input
                 id="email"
                 type="email"
@@ -73,12 +77,12 @@ export default function RegisterPage() {
                 value={formData.email}
                 onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                 required
-                className="mt-2"
+                className="mt-2 glass-card border-white/20 text-white placeholder:text-white/40 focus:border-primary"
               />
             </div>
 
             <div>
-              <Label htmlFor="password">Password</Label>
+              <Label htmlFor="password" className="text-white/80">Password</Label>
               <Input
                 id="password"
                 type="password"
@@ -87,13 +91,13 @@ export default function RegisterPage() {
                 onChange={(e) => setFormData({ ...formData, password: e.target.value })}
                 required
                 minLength={8}
-                className="mt-2"
+                className="mt-2 glass-card border-white/20 text-white placeholder:text-white/40 focus:border-primary"
               />
-              <p className="mt-1 text-xs text-gray-500">Minimo 8 caratteri</p>
+              <p className="mt-1 text-xs text-white/50">Minimo 8 caratteri</p>
             </div>
 
             <div>
-              <Label htmlFor="confirmPassword">Conferma Password</Label>
+              <Label htmlFor="confirmPassword" className="text-white/80">Conferma Password</Label>
               <Input
                 id="confirmPassword"
                 type="password"
@@ -101,7 +105,7 @@ export default function RegisterPage() {
                 value={formData.confirmPassword}
                 onChange={(e) => setFormData({ ...formData, confirmPassword: e.target.value })}
                 required
-                className="mt-2"
+                className="mt-2 glass-card border-white/20 text-white placeholder:text-white/40 focus:border-primary"
               />
             </div>
 
@@ -110,15 +114,15 @@ export default function RegisterPage() {
                 id="terms"
                 type="checkbox"
                 required
-                className="h-4 w-4 mt-1 text-pink-600 focus:ring-pink-500 border-gray-300 rounded"
+                className="h-4 w-4 mt-1 rounded border-white/20 bg-white/10 text-primary focus:ring-primary"
               />
-              <label htmlFor="terms" className="ml-2 block text-sm text-gray-900">
+              <label htmlFor="terms" className="ml-2 block text-sm text-white/80">
                 Accetto i{" "}
-                <a href="#" className="font-medium text-pink-600 hover:text-pink-500">
+                <a href="#" className="font-medium text-primary hover:text-primary-light transition-colors">
                   Termini di Servizio
                 </a>{" "}
                 e la{" "}
-                <a href="#" className="font-medium text-pink-600 hover:text-pink-500">
+                <a href="#" className="font-medium text-primary hover:text-primary-light transition-colors">
                   Privacy Policy
                 </a>
               </label>
@@ -126,33 +130,38 @@ export default function RegisterPage() {
 
             <Button
               type="submit"
-              variant="primary"
-              className="w-full"
+              className="w-full bg-gradient-to-r from-primary to-accent hover:from-primary-dark hover:to-accent-dark text-white font-semibold py-6 magnetic-btn btn-shine"
               disabled={isLoading}
             >
-              {isLoading ? "Registrazione in corso..." : "Registrati"}
+              {isLoading ? "Registrazione in corso..." : "Crea Account"}
             </Button>
 
             <div className="text-center">
-              <span className="text-sm text-gray-600">Hai già un account? </span>
-              <Link href="/login" className="text-sm font-medium text-pink-600 hover:text-pink-500">
+              <span className="text-sm text-white/60">Hai già un account? </span>
+              <Link href="/login" className="text-sm font-medium text-primary hover:text-primary-light transition-colors">
                 Accedi ora
               </Link>
             </div>
           </form>
 
+          {/* Divider */}
           <div className="mt-6">
             <div className="relative">
               <div className="absolute inset-0 flex items-center">
-                <div className="w-full border-t border-gray-300" />
+                <div className="w-full border-t border-white/10" />
               </div>
               <div className="relative flex justify-center text-sm">
-                <span className="px-2 bg-white text-gray-500">Oppure registrati con</span>
+                <span className="px-4 glass-card text-white/60">Oppure registrati con</span>
               </div>
             </div>
 
+            {/* Social Login */}
             <div className="mt-6 grid grid-cols-2 gap-3">
-              <Button variant="outline" className="w-full">
+              <Button
+                type="button"
+                variant="ghost"
+                className="glass-card glass-hover border border-white/20 text-white"
+              >
                 <svg className="w-5 h-5 mr-2" viewBox="0 0 24 24">
                   <path fill="currentColor" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
                   <path fill="currentColor" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
@@ -161,7 +170,11 @@ export default function RegisterPage() {
                 </svg>
                 Google
               </Button>
-              <Button variant="outline" className="w-full">
+              <Button
+                type="button"
+                variant="ghost"
+                className="glass-card glass-hover border border-white/20 text-white"
+              >
                 <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                 </svg>
@@ -169,8 +182,8 @@ export default function RegisterPage() {
               </Button>
             </div>
           </div>
-        </CardContent>
-      </Card>
+        </div>
+      </div>
     </div>
   )
 }

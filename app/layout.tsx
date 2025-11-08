@@ -27,11 +27,27 @@ export default function RootLayout({
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
       </head>
       <body className="antialiased">
-        <Navbar />
-        <main className="min-h-screen pt-20">
-          {children}
-        </main>
-        <Footer />
+        {/* Animated Gradient Mesh Background */}
+        <div className="bg-gradient-mesh">
+          <div className="mesh-gradient mesh-1"></div>
+          <div className="mesh-gradient mesh-2"></div>
+          <div className="mesh-gradient mesh-3"></div>
+        </div>
+
+        {/* Grid Overlay */}
+        <div className="grid-overlay"></div>
+
+        {/* Scroll Progress Bar */}
+        <div className="scroll-progress" id="scroll-progress"></div>
+
+        {/* Main Content */}
+        <div className="relative z-10">
+          <Navbar />
+          <main className="min-h-screen pt-20">
+            {children}
+          </main>
+          <Footer />
+        </div>
       </body>
     </html>
   );
