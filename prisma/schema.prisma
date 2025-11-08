@@ -1,0 +1,107 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  password      String
+  image         String?
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  prenotazioni  Prenotazione[]
+}
+
+model Scuola {
+  id          String   @id @default(cuid())
+  nome        String
+  indirizzo   String
+  citta       String
+  provincia   String
+  regione     String
+  cap         String?
+  telefono    String?
+  email       String?
+  sitoWeb     String?
+  latitudine  Float
+  longitudine Float
+  descrizione String?
+  servizi     String?  // JSON string
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  maestri     Maestro[]
+}
+
+model Maestro {
+  id          String   @id @default(cuid())
+  nome        String
+  cognome     String
+  email       String?
+  telefono    String?
+  bio         String?
+  foto        String?
+  specialita  String?  // es: "Classica,Moderna,Hip-Hop"
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  scuolaId    String
+  scuola      Scuola   @relation(fields: [scuolaId], references: [id], onDelete: Cascade)
+
+  corsi       Corso[]
+}
+
+model Corso {
+  id          String   @id @default(cuid())
+  nome        String
+  tipoDanza   String   // es: "Classica", "Moderna", "Hip-Hop"
+  livello     String   // es: "Principiante", "Intermedio", "Avanzato"
+  descrizione String?
+  durata      Int      // minuti
+  maxPartecipanti Int?
+  prezzo      Float?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  maestroId   String
+  maestro     Maestro  @relation(fields: [maestroId], references: [id], onDelete: Cascade)
+
+  orari       OrarioCorso[]
+  prenotazioni Prenotazione[]
+}
+
+model OrarioCorso {
+  id          String   @id @default(cuid())
+  giornoSettimana Int  // 0-6 (Domenica-Sabato)
+  oraInizio   String   // formato "HH:mm"
+  oraFine     String   // formato "HH:mm"
+
+  corsoId     String
+  corso       Corso    @relation(fields: [corsoId], references: [id], onDelete: Cascade)
+}
+
+model Prenotazione {
+  id          String   @id @default(cuid())
+  data        DateTime
+  stato       String   @default("confermata") // "confermata", "annullata", "completata"
+  note        String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  corsoId     String
+  corso       Corso    @relation(fields: [corsoId], references: [id], onDelete: Cascade)
+}
